@@ -1,0 +1,9 @@
+--- 
+- hosts: all 
+  name: checknano
+  tasks: 
+    - 
+      apt: 
+        name: nano
+        state: latest
+      name: "ensure nano is there"

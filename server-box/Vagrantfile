@@ -1,0 +1,8 @@
+# build server.box
+# use metadata.json
+
+Vagrant.configure("2") do |config|
+  config.vm.provider :aws do |aws|
+    aws.ami = "ami-7747d01e"
+  end
+end

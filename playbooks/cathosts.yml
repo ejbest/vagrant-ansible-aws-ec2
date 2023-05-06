@@ -1,0 +1,11 @@
+--- 
+- hosts: all
+  name: cathosts
+  gather_facts: false
+  vars:
+    file_with_path: "/etc/hosts"
+
+  tasks:
+
+    - name: Print content
+      debug: msg={{ lookup('file', file_with_path) |split('\n') }}
