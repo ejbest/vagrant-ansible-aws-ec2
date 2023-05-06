@@ -12,88 +12,45 @@ Here is what is completed
 3. able to manage the server with Vagrant
 
 How to Test 
-1. setup with credentials 
+1. setup with credentials
+- Get <keyname>.pem "Key Pair" from the AWS EC2 Console   
 2. git clone repo 
-3. login to AWS console 
+3. vagrant plugin install vagrant-env 
+4. login to AWS console 
     - in EC2 Console create security group
     - export "these vars" 
     - create key pair of named credentials 
     - 
+5. Must have a keypair and the name must match the Vagrantfile<br>
+![alt text](img/AWS-keypair.png)
+<br>
+6. Must have a security group and the name must match the Vagrantfile <br> 
+![alt text](img/AWS-security-group.png)
 
-4. vagrant 
-
+7. Here is the basic flow<br>
 ![alt text](img/basicFlow.png)
 
+<pre>
+# take the pem key and put it in a location 
+# get the keys and export them
+export AWS_ACCESS_KEY_ID=123456keyname
+export AWS_SECRET_ACCESS_KEY=xyz123pdq
+export AWS_SSH_PVT_KEY=/home/<myfolder>/.ssh/VAGRANT.pem
 
-
-Persons in this repo are here to share and support each other to make greatness in "self world" and bring comfort in our small world of kindness to each other.  The items we are studying for focus in our employment are:
-
-An open test platform to connect, manage, and secure microservices.
-
-=======
-<br> o AWS/GCP/Azure/Digital Ocean/Linode
-<br> o Jenkins / Terraform build outs 
-<br> o Packer / Ansible configured Images 
-<br> o Vault / (certification pending)
-<br> o Kubernetes; running all containers; there is nothing else!
-<br> o Itsio Service Mesh
-
-# Itsio Service Mesh
-
-In this README:
-
-- [Introduction](#introduction)
-- [Repositories](#repositories)
-- [Issue management](#issue-management)
-
-git clone /vagrant-ansible-
-cd vagrant-ansible-aws/
-vagrant up --provider=aws
-apt install vagrant 
+git clone /vagrant-ansible-aws-ec2
+cd vagrant-ansible-aws-ec2 /
 sudo apt install vagrant 
-vagrant plugin install vagrant-aws
-
-mkdir vagrant-aws
-cd vagrant-aws
 vagrant init
-cd .vagrant.d
-cd vagrant-aws/
-vagrant plugin list
-vagrant up --provider virtualbox
-vi vagrant_praveen.pem
-chmod 400 vagrant_praveen.pem
-vi vagrant-aws/
-
-
-vagrant ssh
-cd work/vagrant-ansible-aws/
-vagrant halt
-
-
-cat vagrant_ansible_inventory 
-vagrant plugin install vagrant-env
-history | grep vagrant
-vagrant down --provider=aws
-vagrant destroy --provider=aws
-vagrant destroy -f --provider=aws
-vagrant destroy --force --provider=aws
-vagrant
-vagrant status
-vagrant destroy
-vagrant ?
-vagrant destory ?
-vagrant destroy ?
-vagrant destroy -q
-vagrant destroy -g
-vagrant destroy -g -f
-vagrant up
+vagrant plugin install vagrant-aws
+vagrant plugin install vagrant-env 
+vagrant up --provider=aws
+vagrant global-status
+vagrant status 
 vagrant status -full
-vagrant destroy -g -f && vagrant up --provider=aws
-cd vagrant-ansible-aws/vagrant-ansible-aws/
-mv vagrant-ansible-aws/ work
-vagrant destroy -f
+vagrant destroy -g -f
+vagrant plugin list
+vagrant halt
+</pre>
 
-
-
-## Main Products in Project
+## Products included here
 ![alt text](img/products.png)

@@ -15,7 +15,7 @@ end
 
 Vagrant.configure(2) do |config|
     config.env.enable 
-    config.vm.box = "dummy"
+    config.vm.box = "dummy.box"
     config.vm.synced_folder ".", "/vagrant", disabled: true
     config.vm.provider :aws do |aws, override|
        aws.access_key_id = ENV['AWS_ACCESS_KEY_ID'] 
