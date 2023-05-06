@@ -24,8 +24,10 @@ How to Test
 5. Must have a keypair and the name must match the Vagrantfile<br>
 ![alt text](img/AWS-keypair.png)
 <br>
-6. Must have a security group and the name must match the Vagrantfile <br> 
-![alt text](img/AWS-security-group.png)
+6. Must have a security group and the name must match the Vagrantfile <br>
+
+    ![alt text](img/AWS-security-group.png)
+    
 
 7. Here is the basic flow<br>
 ![alt text](img/basicFlow.png)
